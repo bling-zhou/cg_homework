@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
-#include <GLUT/GLUT.h>
+#include <GLUT/glut.h>
 #include <vector>
 using namespace std;
 
@@ -60,7 +60,8 @@ protected://方法
 public:
     //对外提供的公共方法
     void paint();
-    Screen(int width=800,int number=10,int point_size=5);
+
+    explicit Screen(int width=800,int number=10,int point_size=5);
     virtual ~Screen();
 
 };
@@ -93,12 +94,12 @@ private://成员
     Point getNextPointNegative();
 
 public:
-    void draw();
+    void draw() override;
 
 public://方法
     Line(int startx,int starty,int endx,int endy,int width=800,int number=20,int point_size=5);
     Line(Point start,Point end,int width=800,int number=20,int point_size=5);
-    ~Line();
+    ~Line() override;
 
 };
 
@@ -128,11 +129,11 @@ private:
      */
     vector<Point> getAllMirrorPoint(Point& point,vector<Point>& mirrorPoints);
 protected:
-    virtual void draw();
+    void draw() override;
 public:
     //构造函数
     Circle(int x,int y,int r,int width=800,int number=20,int point_size=5);
-    ~Circle();
+    ~Circle() override;
 };
 
 class Polygon:public Screen{
@@ -146,11 +147,11 @@ private:
     //采用点填充方法，4填充或者8填充
     int type=4;
 protected:
-    virtual void draw();
+    void draw() override;
 public:
     //构造函数
     Polygon(vector<Point>& polygonPoints,Point seedPoint,int width=800,int number=20,int point_size=5);
-    ~Polygon();
+    ~Polygon() override;
 };
 
 #endif //OPENCLTEST_CG_H

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
-#include "cg.h"
+#include "head/cg.h"
 using namespace std;
 
 const int windowsSize=800;

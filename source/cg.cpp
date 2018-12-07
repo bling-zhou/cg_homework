@@ -2,7 +2,7 @@
 // Created by 周亮 on 2018/12/6.
 //
 //屏幕的公共实现类
-#include "cg.h"
+#include "../head/cg.h"
 
 Screen::Screen(int width, int number, int point_size) {
     this->height = this->width = width;
@@ -52,7 +52,7 @@ void Screen::drawPoint(const Point& point) {
 }
 
 Screen::~Screen() {
-   // cout<< "delete screen"<<endl;
+    cout<< "delete screen"<<endl;
 }
 
 Point::Point() {}

@@ -1,7 +1,7 @@
 //
 // Created by 周亮 on 2018/12/5.
 //
-#include "cg.h"
+#include "../head/cg.h"
 
 //子类的构造函数
 Line::Line(int startx, int starty, int endx, int endy, int width, int number, int point_size): Screen(width,number,point_size){
@@ -139,6 +139,6 @@ Point Line::getNextPointPositive() {
 }
 
 Line::~Line() {
-   // cout<<"delete line"<<endl;
+    cout<<"delete line"<<endl;
 }
 

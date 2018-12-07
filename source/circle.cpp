@@ -1,7 +1,7 @@
 //
 // Created by 周亮 on 2018/12/7.
 //画圆的实现
-#include "cg.h"
+#include "../head/cg.h"
 
 Circle::Circle(int x, int y, int r, int width, int number, int point_size):Screen(width,number,point_size) {
     center.x = x;
@@ -40,8 +40,8 @@ void Circle::draw() {
     //设置颜色
     glColor3f(0.0,0.0,0.0);
     glPointSize(point_size);
-    vector<Point>::iterator iterator = points.begin();
-    vector<Point>::iterator end = points.end();
+    auto iterator = points.begin();
+    auto end = points.end();
     for(;iterator != end; ++iterator){
         mirrorPoints = getAllMirrorPoint(*iterator,mirrorPoints);
         //画点
@@ -111,5 +111,5 @@ vector<Point> Circle::getAllMirrorPoint(Point &point, vector<Point> &mirrorPoint
 }
 
 Circle::~Circle() {
-   // cout<<"delete circle"<<endl;
+    cout<<"delete circle"<<endl;
 }
