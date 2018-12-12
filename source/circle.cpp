@@ -110,6 +110,4 @@ vector<Point> Circle::getAllMirrorPoint(Point &point, vector<Point> &mirrorPoint
     return mirrorPoints;
 }
 
-Circle::~Circle() {
-    cout<<"delete circle"<<endl;
-}
+Circle::~Circle(){}

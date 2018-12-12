@@ -31,9 +31,9 @@ void drawCircle(){
 }
 
 void drawPolygon(){
-    vector<Point> points = {Point(5,5),Point(3, -2),Point(-2,1)};
-    Point seed(0,0);
-    Screen* polygon = new Polygon(points,seed,windowsSize,10);
+    vector<Point> points = {Point(3,1),Point(1, 7),Point(3,12),Point(7,8),Point(12,9),Point(8,1),Point(6,5)};
+    Point seed(6,6);
+    Screen* polygon = new Polygon(points,seed,windowsSize,20);
     polygon->paint();
     //delete polygon;
 }

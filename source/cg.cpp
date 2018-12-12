@@ -9,6 +9,7 @@ Screen::Screen(int width, int number, int point_size) {
     this->point_size = point_size;
     this->number = number;
     this->delta_hei = 1.0f / this->number;
+    this->avg_length = this->width/ 2 / this->number;
 
 }
 
@@ -46,13 +47,16 @@ void Screen::drawBackground() {
 void Screen::drawPoint(const Point& point) {
     glBegin(GL_POINTS);
     glVertex2f(point.x * delta_hei, point.y *delta_hei);
-    //glVertex2i(1.0,1.0);
     glEnd();
     glFlush();
 }
 
-Screen::~Screen() {
-    cout<< "delete screen"<<endl;
+Screen::~Screen() {}
+
+void Screen::getPointColor(int x, int y, GLubyte *color) {
+    x = (x + this->number) * this->avg_length;
+    y = (y + this->number) * this->avg_length;
+    glReadPixels(x,y,1,1,GL_RGB,GL_UNSIGNED_BYTE,color);
 }
 
 Point::Point() {}
